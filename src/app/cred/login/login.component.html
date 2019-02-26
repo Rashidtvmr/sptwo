@@ -1,0 +1,59 @@
+<div>
+        <div class="container">
+        <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 offset-lg-3 offset-md-4 offset-sm-1 ">
+          <div class="shadow-lg p-5 m-3 bg-white rounded-lg bg-light" id="formDec">
+            <form [formGroup]="loginForm">
+              <div class="d-flex justify-content-center">
+                <span>
+                  <strong>
+                    <i class="far fa-laugh"></i>Login
+                  </strong>
+                </span>
+              </div><br>
+              <mat-divider></mat-divider><br>
+              <mat-form-field class="example-full-width">
+                  <input 
+                  formControlName="email"
+                  matInput 
+                  placeholder="Email" >
+                  <mat-hint>Enter valid email (e.g.Example@domail.com)!</mat-hint>
+                  <mat-error *ngIf="!loginForm.get('email').valid"> 
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">
+                    Email is <strong>required</strong>
+                  </mat-error> 
+                </mat-form-field>
+
+                <br><br>
+              <mat-form-field >
+                <input 
+                formControlName="passwd"
+                matInput 
+                placeholder="Password" type="password">
+                <mat-hint>Minimum 6 characters</mat-hint>
+                <mat-error *ngIf="!loginForm.get('passwd').valid && loginForm.get('passwd').touched">
+                    Password is <strong>required</strong>
+                  </mat-error>
+              </mat-form-field>
+              
+              <br><br>
+              <mat-checkbox >Remember me.</mat-checkbox>
+              <br><br>
+              <div class="">
+                <button 
+                [disabled]="!loginForm.valid"
+                mat-raised-button 
+                type="submit" 
+                class="btn btn-primary btn-block" 
+                (click)="logMeIn()"
+                #loginBtn>Login</button> 
+              
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

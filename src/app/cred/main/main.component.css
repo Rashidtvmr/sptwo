@@ -1,0 +1,137 @@
+.example-card {
+    width:100%;
+    max-height: 250px;
+    min-height: 250px;
+    margin: 5%;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .example-viewport {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    
+  }
+  /* dk-virtual-scroll-viewport{
+    height: 100%;
+    width: 100%;
+  } */
+
+  /*  */
+ a{
+    text-decoration: none;
+  }
+  
+  .Card{
+    background:ivory;
+    border: 1px solid lightslategray;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    margin:1px;
+    padding: 4px;
+    z-index: 10;
+  }
+  
+  .Card-header{
+    padding: 20px;
+    height: 40px;
+  }
+  
+  .Card-user-image{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+  }
+  
+  .Card-time{
+    display: flex;
+    float: right;
+    width: 180px;
+    padding-top:10px;
+    text-align: right;
+    color: #999;
+  }
+  
+  .Card-user-name{
+    margin-left:20px;
+    font-weight:bold;
+    color: #262626;
+  }
+  
+  .Card-content{
+    padding: 20px;
+  }
+  
+  .Likes{
+    font-weight: bold;
+  }
+  
+  .Card-content-user{
+    font-weight: bold;
+    color: #262626;
+  }
+  
+  .hashtag{
+    color: #003569;
+  }
+  
+  .comments{
+    color:#999;
+  }
+  
+  .user-comment{
+    color: #003569;
+  }
+  
+  .Card-footer{
+    padding: 20px;
+    /* display: flex; */
+    /* align-items: center; */
+  }
+  .Card-image{
+    height:300px;
+     width:100%;
+     padding:2px;
+     margin:auto;
+     border-radius: 5px;
+  }
+  .Card-image img{
+     border-radius: 5px;
+  }
+  hr{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+   
+  }
+  
+  
+  .footer-action-icons{
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  .comments-input{
+    border: none;
+    margin-left: 10px;
+    width: 100%;
+  }
+  /*  */
+  #likes{
+    cursor: pointer;
+  }
+  #comment{
+    float: right;
+  }
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}

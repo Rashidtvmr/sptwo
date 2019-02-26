@@ -1,0 +1,89 @@
+
+
+
+<div class="row">
+  <div class="col">
+    <button mat-raised-button (click)="showRecent()">Show Recent</button>
+    <button mat-raised-button (click)="showRandom()">Show Random</button>
+  </div>
+</div>
+<cdk-virtual-scroll-viewport itemSize="1000" minBufferPx="200" maxBufferPx="1000"  class="example-viewport" *ngIf="isRandom">
+    <div class="col-lg-6 col-sm-10 offset-lg-3 offset-sm-1">
+
+    <div class="Card" *cdkVirtualFor="let user of people">
+        <div class="Card-header">
+          <img src="{{user.aUrl}}" class="Card-user-image">
+          <a class="Card-user-name" href="https://www.instagram.com/rogersbase/">{{user.name}}</a>
+          <div class="Card-time"><input type="text" value="{{user.postedon}}" readonly min=10></div>
+        </div>
+        <hr>
+        <div class="Card-image">
+          <img src= "{{user.iUrl}}" height=300px width=100% />
+        </div>
+
+        <div class="Card-content">
+          <p class="Likes"><i class="far fa-eye"></i>{{user.views}} <strong>Views</strong></p>
+          <p><a class="Card-content-user" href="#" >{{user.name}}</a>
+        I <strong>: </strong>{{" "+user.desc}}}</p>
+          <br><a class="user-comment" href="#">chrisobrien64</a> <small>NO WAY! WAY TO GO ROGER MY BOI</small><br>
+          <br><a class="user-comment" href="#">artie_mcparty</a> <small>ROGER = BEST NINTENDO FAN.</small><br>
+          <br><a class="user-comment" href="#">theealeexj</a><small>I JUST TRIED IT OUT TODAY ITS AMAZING</small><br>
+        
+        </div>  
+        <mat-divider></mat-divider>
+        
+        
+        <div class="Card-footer ">
+            
+        
+          <a class="footer-action-icons" id="likes"  (click)="liked(user.id)"><i class="fa fa-heart-o" [ngStyle]="{backgroundColor:getColor()}"></i>{{user.likes+" Likes"}}</a>
+            
+            
+                <a mat-button (click)="openDialog()" style="float:right">Comment</a>
+            
+        </div>
+
+      </div>
+    </div>
+            
+</cdk-virtual-scroll-viewport>
+<cdk-virtual-scroll-viewport itemSize="1000" minBufferPx="200" maxBufferPx="1000"  class="example-viewport" *ngIf="isRecent">
+  <div class="col-lg-6 col-sm-10 offset-lg-3 offset-sm-1">
+
+  <div class="Card" *cdkVirtualFor="let user of recent">
+      <div class="Card-header">
+        <img src="{{user.aUrl}}" class="Card-user-image">
+        <a class="Card-user-name" href="https://www.instagram.com/rogersbase/">{{user.name}}</a>
+        <div class="Card-time"><input type="text" value="{{user.postedon}}" readonly></div>
+      </div>
+      <hr>
+      <div class="Card-image">
+        <img src= "{{user.iUrl}}" height=300px width=100% />
+      </div>
+
+      <div class="Card-content">
+        <p class="Likes"><i class="far fa-eye"></i>{{user.views}} <strong>Views</strong></p>
+        <p><a class="Card-content-user" href="#" >{{user.name}}</a>
+      I <strong>: </strong>{{" "+user.desc}}}</p>
+        <br><a class="user-comment" href="#">chrisobrien64</a> <small>NO WAY! WAY TO GO ROGER MY BOI</small><br>
+        <br><a class="user-comment" href="#">artie_mcparty</a> <small>ROGER = BEST NINTENDO FAN.</small><br>
+        <br><a class="user-comment" href="#">theealeexj</a><small>I JUST TRIED IT OUT TODAY ITS AMAZING</small><br>
+      
+      </div>  
+      <mat-divider></mat-divider>
+      
+      
+      <div class="Card-footer ">
+          
+      
+        <a class="footer-action-icons" id="likes"  (click)="liked(user.id)"><i class="fa fa-heart-o" [ngStyle]="{backgroundColor:getColor()}"></i>{{user.likes+" Likes"}}</a>
+          
+          
+              <a mat-button (click)="openDialog()" style="float:right">Comment</a>
+          
+      </div>
+
+    </div>
+  </div>
+          
+</cdk-virtual-scroll-viewport>

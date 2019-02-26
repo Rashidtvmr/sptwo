@@ -1,0 +1,75 @@
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-sm-10 col-md-6 offset-lg-3 offset-sm-1 offset-md-3">
+    <div class="shadow-lg p-5 m-3 bg-white rounded-lg bg-light" id="formDec">
+      <form [formGroup]="signupForm">
+        <div class="d-flex justify-content-center">
+              <span>
+                <strong>
+                  <i class="fa fa-laugh"></i>Registration
+                </strong>
+              </span>
+            </div>
+            <br>
+        <mat-divider></mat-divider><br>
+        <mat-form-field >
+            <input
+            formControlName="fname"  
+            matInput
+              placeholder="Firstname" 
+              type="text"
+              >
+        </mat-form-field>
+        <mat-form-field >
+            <input 
+            formControlName="sname"  
+            matInput 
+            placeholder="Lastname" 
+            type="text">
+        </mat-form-field> 
+        <mat-form-field >
+            <input 
+              formControlName="semail"  
+              matInput 
+              placeholder="Email" 
+              type="email">
+              <mat-error *ngIf="!signupForm.get('semail').valid && signupForm.get('semail').touched">
+                Email is <strong>required</strong>
+              </mat-error> 
+        </mat-form-field>
+         
+          <br>
+        <mat-form-field>
+              <input 
+              formControlName="pswd1"  
+              matInput 
+              placeholder="Enter your password">
+              
+              <mat-error *ngIf="signupForm.get('pswd1').value!=signupForm.get('pswd2').value && signupForm.get('pswd2').touched ">
+                  Password <strong>not matched!!</strong>
+              </mat-error> 
+        </mat-form-field>
+        
+        <br>
+        <mat-form-field>
+                <input 
+                formControlName="pswd2"
+                matInput 
+                placeholder="Confirm password" >
+                <mat-error *ngIf="signupForm.get('pswd1').value!=signupForm.get('pswd2').value">
+                    Password <strong>not matched!!</strong>
+                  </mat-error> 
+        </mat-form-field>
+            <br><br>
+            <button
+                  [disabled]="!signupForm.valid" 
+                  mat-raised-button 
+                  type="submit" 
+                  class="btn btn-primary btn-block" 
+                  (click)="onSignup()">Sign up
+            </button> 
+      </form>
+    </div>
+  </div>
+</div>
+</div>

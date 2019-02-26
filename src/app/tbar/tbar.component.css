@@ -1,0 +1,11 @@
+.active{
+    background-color:rgb(35, 10, 75);
+    /* color:rgb(143, 9, 9); */
+}
+.element::-webkit-scrollbar { width: 0 !important }
+.element { overflow: -moz-scrollbars-none; }
+.element { -ms-overflow-style: none; }
+
+li a{
+    width: 80%;
+}

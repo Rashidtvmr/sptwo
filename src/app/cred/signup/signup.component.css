@@ -1,0 +1,9 @@
+mat-form-field{
+    width:100%;
+}
+.element::-webkit-scrollbar { width: 0 !important }
+.element { overflow: -moz-scrollbars-none; }
+.element { -ms-overflow-style: none; }
+mat-icon{
+    cursor:pointer;
+}
